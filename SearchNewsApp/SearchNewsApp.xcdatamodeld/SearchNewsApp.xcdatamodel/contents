@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NewsCD" representedClassName="NewsCD" syncable="YES">
+        <attribute name="isViewed" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="newsDescription" attributeType="String"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+        <attribute name="urlToImage" optional="YES" attributeType="String"/>
+        <relationship name="newsResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewsResponseCD" inverseName="newsCD" inverseEntity="NewsResponseCD"/>
+    </entity>
+    <entity name="NewsResponseCD" representedClassName="NewsResponseCD" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="searchTerm" attributeType="String"/>
+        <relationship name="newsCD" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NewsCD" inverseName="newsResponse" inverseEntity="NewsCD"/>
+    </entity>
+    <elements>
+        <element name="NewsCD" positionX="-45" positionY="0" width="128" height="148"/>
+        <element name="NewsResponseCD" positionX="-18" positionY="27" width="128" height="88"/>
+    </elements>
+</model>
